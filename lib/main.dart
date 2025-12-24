@@ -14,16 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashView(),
-      theme: ThemeData(
+      theme: ThemeData.dark().copyWith(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColor.background),
-        /*ده بيشغّل Material Design 3 (M3)
-🔹 مميزاته:
-تصميم أحدث
-أزرار أنعم
-ألوان ديناميكية
-تجربة أقرب لتطبيقات Google الحديثة */
-        useMaterial3: true,
-      ),
-    );
+    ));
   }
 }
