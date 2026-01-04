@@ -1,5 +1,10 @@
+import 'package:bookly_app/Core/Theme/constants.dart';
+import 'package:bookly_app/Features/Home/presentation/views/home_view.dart';
 import 'package:bookly_app/Features/Splash/presentation/views/widgets/sliding_component.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -19,8 +24,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-
     initSlidingAnimation(); // >> start the animation
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.offAll(
+        const HomeView(),
+        transition: Transition.rightToLeft,
+        duration: KTransitionDuration,
+      );
+    });
   }
 
   @override
@@ -51,7 +62,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initSlidingAnimation() {
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1500),
     );
 
     sliderAnimation = Tween<Offset>(
