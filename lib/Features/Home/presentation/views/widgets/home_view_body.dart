@@ -1,4 +1,6 @@
+import 'package:bookly_app/Core/utils/app_assets.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_app_bar.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_list_view_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -6,6 +8,10 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Column(children: [const CustomAppBar()]));
+    return SafeArea(
+      child: Column(
+        children: [const CustomAppBar(), const CustomHomeListViewCard()],
+      ),
+    );
   }
 }
