@@ -16,7 +16,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SplashView(),
       theme: ThemeData.dark().copyWith(
-        colorScheme: ColorScheme.fromSeed(seedColor: KBackground),
-    ));
+        scaffoldBackgroundColor: KBackground,
+
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: KBackground,
+          brightness: Brightness.dark,
+        ),
+      ),
+    );
   }
 }
