@@ -6,14 +6,36 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double searchWidth = MediaQuery.sizeOf(context).height * 0.28;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(AppAssets.logo, height: 20),
-          IconButton(onPressed: () {}, icon: Icon(Icons.search, size: 32)),
+          searchIcon(searchWidth),
         ],
+      ),
+    );
+  }
+
+  Widget searchIcon(double searchWidth) {
+    return InkResponse(
+      onTap: () => {},
+      child: Container(
+        alignment: Alignment.bottomRight,
+        height: 40,
+        width: searchWidth,
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 42, 42, 66),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: const Color.fromARGB(255, 72, 72, 92)),
+        ),
+        child: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Icon(Icons.search, size: 28),
+        ),
       ),
     );
   }
