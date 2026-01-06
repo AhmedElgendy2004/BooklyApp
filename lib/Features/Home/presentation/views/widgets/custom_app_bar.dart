@@ -6,7 +6,7 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double searchWidth = MediaQuery.sizeOf(context).height * 0.28;
+    final double searchWidth = (MediaQuery.sizeOf(context).width - 100) * 0.8;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
