@@ -15,7 +15,7 @@ class FeaturedListViewItem extends StatelessWidget {
       onTap: () {
         Get.to(
           const BookDetailsView(),
-          transition: Transition.rightToLeftWithFade,
+          transition: Transition.rightToLeft,
           duration: KTransitionDuration,
         );
       },
