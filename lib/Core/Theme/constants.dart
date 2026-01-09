@@ -8,7 +8,7 @@ const Color KBackground = Color(0xff100b20);
 const KTransitionDurationSplash = Duration(milliseconds: 1200);
 
 //Transition duration general navigation
-const KTransitionDuration = Duration(milliseconds: 800);
+const KTransitionDuration = Duration(milliseconds: 700);
 
 
 //Title books font family
