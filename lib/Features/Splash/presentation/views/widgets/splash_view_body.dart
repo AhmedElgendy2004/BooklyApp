@@ -74,7 +74,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       Get.offAll(
         const HomeView(),
         transition: Transition.rightToLeftWithFade,
-        duration: KTransitionDuration,
+        duration: KTransitionDurationSplash,
       );
     });
   }
