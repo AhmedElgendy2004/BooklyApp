@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/Theme/constants.dart';
 import 'package:bookly_app/Core/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 
@@ -28,9 +29,9 @@ class CustomAppBar extends StatelessWidget {
         height: 40,
         width: searchWidth,
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 42, 42, 66),
+          color: KPrimaryColor,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: const Color.fromARGB(255, 72, 72, 92)),
+          border: Border.all(color: KSacandColor, width: 1),
         ),
         child: const Padding(
           padding: EdgeInsets.all(8.0),
