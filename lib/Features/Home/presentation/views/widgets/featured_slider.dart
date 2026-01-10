@@ -1,4 +1,5 @@
 import 'package:bookly_app/Features/Home/presentation/views/widgets/featured_list_view.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/featured_list_view_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -11,7 +12,6 @@ class HomeSlider extends StatefulWidget {
 }
 
 class _HomeSliderState extends State<HomeSlider> {
-  final myItems = const [FeaturedBooksListView()];
 
   int currentIndex = 0;
 
@@ -21,7 +21,7 @@ class _HomeSliderState extends State<HomeSlider> {
       height: 200,
       child: Stack(
         children: [
-          CarouselSlider(
+          CarouselSlider.builder(
             options: CarouselOptions(
               autoPlay: true,
               autoPlayInterval: Duration(seconds: 4),
@@ -38,7 +38,11 @@ class _HomeSliderState extends State<HomeSlider> {
                 });
               },
             ),
-            items: myItems,
+            itemCount: 10,
+            itemBuilder: (BuildContext context, int index, int realIndex) { return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: FeaturedListViewItem(),
+              ); },
           ),
           Container(
             padding: EdgeInsets.all(10),
@@ -46,7 +50,7 @@ class _HomeSliderState extends State<HomeSlider> {
               alignment: Alignment.bottomCenter,
               child: AnimatedSmoothIndicator(
                 activeIndex: currentIndex,
-                count: myItems.length,
+                count: 10,
                 effect: const WormEffect(
                   dotHeight: 12,
                   dotWidth: 12,
