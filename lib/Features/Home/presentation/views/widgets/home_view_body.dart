@@ -10,19 +10,25 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 24.0, right: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const CustomAppBar(),
-            const FeaturedSlider(),
-            const SizedBox(height: 30),
-            Text("Best Sellers ", style: Styles.text18),
-            const SizedBox(height: 20),
-            BestSellerListView(),
-          ],
-        ),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 24.0, right: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const CustomAppBar(),
+                  const FeaturedSlider(),
+                  const SizedBox(height: 30),
+                  Text("Best Sellers ", style: Styles.text18),
+                  const SizedBox(height: 20),
+                ],
+              ),
+            ),
+          ),
+          const SliverToBoxAdapter(child: BestSellerListView()),
+        ],
       ),
     );
   }
@@ -33,16 +39,17 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 20.0),
-            child: const BestSellerListViewItem(),
-          );
-        },
-      ),
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return const Padding(
+          padding: EdgeInsets.only(bottom: 20.0),
+          child: BestSellerListViewItem(),
+        );
+      },
     );
   }
 }
