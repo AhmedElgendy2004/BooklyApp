@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/utils/tap_effect.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,15 +10,15 @@ class CustomBookDetailsAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(
-          onPressed: () {
+        TapEffect(
+          onClick: () {
             context.pop();
           },
-          icon: const Icon(Icons.close, size: 32),
+          child: const Icon(Icons.close, size: 32),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.shopping_cart_outlined, size: 32),
+        TapEffect(
+          onClick: () {},
+          child: const Icon(Icons.shopping_cart_outlined, size: 32),
         ),
       ],
     );
