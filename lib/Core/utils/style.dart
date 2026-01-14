@@ -19,7 +19,12 @@ fontFamily  ثابت في معظم الخطوط الا مع حالات شاذه
 
   static const text20 = TextStyle(fontSize: 20, fontWeight: FontWeight.w900);
 
-  static const text18 = TextStyle(fontSize: 18, fontWeight: FontWeight.w600);
+  static const text18gray = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: Colors.white54,
+    fontStyle: FontStyle.italic,
+  );
 
   static const text30 = TextStyle(
     fontSize: 30,
