@@ -1,7 +1,6 @@
-import 'package:bookly_app/Core/Theme/constants.dart';
 import 'package:bookly_app/Core/utils/app_assets.dart';
-import 'package:bookly_app/Features/Home/presentation/views/book_details_view.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class FeaturedListViewItem extends StatelessWidget {
   const FeaturedListViewItem({super.key});
@@ -10,11 +9,8 @@ class FeaturedListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Get.to(
-        //   const BookDetailsView(),
-        //   transition: Transition.rightToLeft,
-        //   duration: KTransitionDuration,
-        // );
+      
+        context.go('/book_details');
       },
       child: SizedBox(
         child: AspectRatio(
