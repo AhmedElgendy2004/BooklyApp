@@ -10,7 +10,7 @@ class FeaturedListViewItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
       
-        context.go('/book_details');
+        context.push('/book_details');
       },
       child: SizedBox(
         child: AspectRatio(

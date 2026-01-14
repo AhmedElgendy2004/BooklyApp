@@ -11,7 +11,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.only(left: 15.0, right: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
             const CustomAppBar(),
