@@ -1,5 +1,5 @@
 import 'package:bookly_app/Core/Theme/constants.dart';
-import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/featured_list_view_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -52,7 +52,7 @@ class SliderBook extends StatelessWidget {
       itemBuilder: (context, index, realIndex) {
         return const Padding(
           padding: EdgeInsets.symmetric(horizontal: 8),
-          child: CustomBookImage(),
+          child: FeaturedListViewItem(),
         );
       },
       options: CarouselOptions(
