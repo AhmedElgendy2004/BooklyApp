@@ -1,5 +1,6 @@
 import 'package:bookly_app/Core/Theme/constants.dart';
 import 'package:bookly_app/Core/utils/style.dart';
+import 'package:bookly_app/Core/utils/tap_effect.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_image.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_raring.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,8 @@ class BestSellerListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
+    return TapEffect(
+      onClick: () {
         context.push('/book_details');
       },
       child: SizedBox(

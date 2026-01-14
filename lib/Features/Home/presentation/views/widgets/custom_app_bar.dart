@@ -1,5 +1,6 @@
 import 'package:bookly_app/Core/Theme/constants.dart';
 import 'package:bookly_app/Core/utils/app_assets.dart';
+import 'package:bookly_app/Core/utils/tap_effect.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -22,8 +23,8 @@ class CustomAppBar extends StatelessWidget {
   }
 
   Widget searchIcon(double searchWidth) {
-    return InkResponse(
-      onTap: () => {},
+    return TapEffect(
+      onClick: () {},
       child: Container(
         alignment: Alignment.bottomRight,
         height: 40,

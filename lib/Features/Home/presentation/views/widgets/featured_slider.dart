@@ -1,4 +1,5 @@
 import 'package:bookly_app/Core/Theme/constants.dart';
+import 'package:bookly_app/Core/utils/tap_effect.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -53,8 +54,8 @@ class SliderBook extends StatelessWidget {
       itemBuilder: (context, index, realIndex) {
         return Padding(
           padding: EdgeInsets.symmetric(horizontal: 8),
-          child: GestureDetector(
-            onTap: () {
+          child: TapEffect(
+            onClick: () {
               context.push('/book_details');
             },
             child: BookImage(),
