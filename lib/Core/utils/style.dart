@@ -15,7 +15,7 @@ fontFamily  ثابت في معظم الخطوط الا مع حالات شاذه
     color: Colors.white54,
   );
 
-  static const text16 = TextStyle(fontSize: 16, fontWeight: FontWeight.w600);
+  static const text16 = TextStyle(fontSize: 16, fontWeight: FontWeight.w800);
 
   static const text20 = TextStyle(fontSize: 20, fontWeight: FontWeight.w900);
 

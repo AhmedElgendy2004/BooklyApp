@@ -1,5 +1,5 @@
 import 'package:bookly_app/Core/utils/style.dart';
-import 'package:bookly_app/Core/utils/tap_effect.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_wedges/book_details_bottom.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_wedges/custom_book_details_app_bar.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_image.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_raring.dart';
@@ -33,37 +33,7 @@ class BookDetailsViewBody extends StatelessWidget {
             SizedBox(height: width * 0.03),
             const BookRating(),
             SizedBox(height: width * 0.1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: width * 0.4,
-                  height: 55,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(18),
-                      bottomLeft: Radius.circular(18),
-                    ),
-                  ),
-                ),
-                TapEffect(
-                  onClick: () {},
-                  child: Container(
-                    width: width * 0.4,
-                    height: 55,
-                    decoration: BoxDecoration(
-                      color: Colors.redAccent,
-                      borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(18),
-                        bottomRight: Radius.circular(18),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            
+            BooKDetailsBottom(),
           ],
         ),
       ),
