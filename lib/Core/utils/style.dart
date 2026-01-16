@@ -12,7 +12,7 @@ fontFamily  ثابت في معظم الخطوط الا مع حالات شاذه
   static const text14gray = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.normal,
-    color: Colors.white54,
+    color: KGrayColor,
   );
 
   static const text16 = TextStyle(fontSize: 16, fontWeight: FontWeight.w800);
@@ -22,7 +22,7 @@ fontFamily  ثابت في معظم الخطوط الا مع حالات شاذه
   static const text18gray = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
-    color: Colors.white54,
+    color: KGrayColor,
     fontStyle: FontStyle.italic,
   );
 

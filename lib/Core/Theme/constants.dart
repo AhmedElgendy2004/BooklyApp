@@ -11,7 +11,8 @@ const Color KBorderColor = Color(0xff5A5A89);
 const Color KWhite = Color(0xffffffff);
 // Sacand color
 const Color KSacandColor = Color(0xffEF8262);
-
+// Gray color
+const Color KGrayColor = Color(0xff8A8A9C);
 
 //Transition duration in Splash navigation
 const KTransitionDurationSplash = Duration(milliseconds: 1200);
