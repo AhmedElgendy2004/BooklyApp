@@ -14,7 +14,7 @@ fontFamily  ثابت في معظم الخطوط الا مع حالات شاذه
     fontWeight: FontWeight.normal,
     color: KGrayColor,
   );
-  static const text14 = TextStyle(fontSize: 14, fontWeight: FontWeight.normal);
+  static const text14 = TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
 
   static const text16 = TextStyle(fontSize: 16, fontWeight: FontWeight.w800);
 

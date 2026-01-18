@@ -36,15 +36,39 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
             SizedBox(height: width * 0.02),
             const BookRating(),
-            SizedBox(height: width * 0.08),
+            SizedBox(height: width * 0.1),
             const BooKDetailsBottom(),
-            SizedBox(height: width * 0.08),
+            SizedBox(height: width * 0.1),
             const Align(
               alignment: Alignment.centerLeft,
               child: Text("You Can Also Like ", style: Styles.text14),
             ),
+            SizedBox(height: width * 0.02),
+
+            const SimilarBooksListView(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class SimilarBooksListView extends StatelessWidget {
+  const SimilarBooksListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.18,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: BookImage(),
+          );
+        },
       ),
     );
   }
