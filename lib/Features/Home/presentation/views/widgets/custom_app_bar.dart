@@ -32,7 +32,7 @@ class CustomAppBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: KPrimaryColor,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: KBorderColor, width: 1),
+          border: Border.all(color: KGrayColor, width: 1),
         ),
         child: const Padding(
           padding: EdgeInsets.all(8.0),

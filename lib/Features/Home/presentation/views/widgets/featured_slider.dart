@@ -31,10 +31,10 @@ class _FeaturedSliderState extends State<FeaturedSlider> {
 
           Positioned(
             bottom: -10,
-            right: 90,
-            left: 90,
+            right: 0,
+            left: 0,
 
-            child: Dots(currentIndex: currentIndex, count: 10),
+            child: Center(child: Dots(currentIndex: currentIndex, count: 10)),
           ),
         ],
       ),
@@ -69,8 +69,8 @@ class SliderBook extends StatelessWidget {
         enlargeStrategy: CenterPageEnlargeStrategy.scale,
 
         autoPlay: true,
-        autoPlayInterval: const Duration(seconds: 4),
-        autoPlayAnimationDuration: const Duration(milliseconds: 1000),
+        autoPlayInterval: KAutoPlayInterval,
+        autoPlayAnimationDuration: KAutoPlayAnimationDuration,
 
         pauseAutoPlayOnTouch: true,
 
@@ -93,12 +93,22 @@ class Dots extends StatelessWidget {
     return AnimatedSmoothIndicator(
       activeIndex: currentIndex,
       count: count,
-      effect: const ExpandingDotsEffect(
+      effect: const JumpingDotEffect(
         dotHeight: 8,
         dotWidth: 8,
+        jumpScale: 1.5,
+        verticalOffset: 10,
         activeDotColor: KWhite,
         dotColor: KPrimaryColor,
       ),
+      /*JumpingDotEffect(
+    dotHeight: 16,
+    dotWidth: 16,
+    jumpScale: .7,           // How much the dot scales when jumping
+    verticalOffset: 20,      // The height of the jump [Vertical Offset]
+    activeDotColor: Colors.deepPurple,
+    dotColor: Colors.grey,
+  ), */
     );
   }
 }
