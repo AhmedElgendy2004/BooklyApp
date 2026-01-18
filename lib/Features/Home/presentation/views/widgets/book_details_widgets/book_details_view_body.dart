@@ -1,6 +1,6 @@
 import 'package:bookly_app/Core/utils/style.dart';
-import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_wedges/book_details_bottom.dart';
-import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_wedges/custom_book_details_app_bar.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_widgets/book_details_bottom.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_image.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_raring.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +43,7 @@ class BookDetailsViewBody extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text("You Can Also Like ", style: Styles.text14),
             ),
-            SizedBox(height: width * 0.02),
+            SizedBox(height: width * 0.04),
 
             const SimilarBooksListView(),
           ],
@@ -59,13 +59,13 @@ class SimilarBooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.18,
+      height: MediaQuery.of(context).size.height * 0.17,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(right: 16.0),
             child: BookImage(),
           );
         },
