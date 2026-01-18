@@ -14,7 +14,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
         children: [
           TapEffect(
             onClick: () {
-              context.pop();
+              context.go('/home');
             },
             child: const Icon(Icons.close, size: 32),
           ),
