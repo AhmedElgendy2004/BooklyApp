@@ -2,8 +2,8 @@ import 'package:bookly_app/Core/utils/tap_effect.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class CustomBookDetailsAppBar extends StatelessWidget {
-  const CustomBookDetailsAppBar({super.key});
+class CustomBookDetailsAppBarSection extends StatelessWidget {
+  const CustomBookDetailsAppBarSection({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,8 +3,8 @@ import 'package:bookly_app/Core/utils/style.dart';
 import 'package:bookly_app/Core/utils/tap_effect.dart';
 import 'package:flutter/material.dart';
 
-class BooKDetailsBottom extends StatelessWidget {
-  const BooKDetailsBottom({super.key});
+class BooKDetailsBottomSection extends StatelessWidget {
+  const BooKDetailsBottomSection({super.key});
 
   @override
   Widget build(BuildContext context) {

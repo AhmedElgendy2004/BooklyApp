@@ -1,8 +1,7 @@
-import 'package:bookly_app/Core/utils/style.dart';
-import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_widgets/book_details_bottom.dart';
-import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_widgets/custom_book_details_app_bar.dart';
-import 'package:bookly_app/Features/Home/presentation/views/widgets/book_image.dart';
-import 'package:bookly_app/Features/Home/presentation/views/widgets/book_raring.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_widgets/book_details_bottom_section.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_widgets/book_details_info_section.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_widgets/custom_book_details_app_bar_section.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/book_details_widgets/similar_books_list_view_section.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -11,64 +10,23 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const CustomBookDetailsAppBar(),
-            Padding(
-              padding: EdgeInsets.only(
-                right: width * 0.2,
-                left: width * 0.2,
-                bottom: width * 0.05,
-                top: 0,
-              ),
-              child: BookImage(),
-            ),
-            const Text("The Jungle Book ", style: Styles.text30, maxLines: 2),
-            SizedBox(height: width * 0.03),
-            const Text(
-              "by Rudyard Kipling",
-              style: Styles.text18gray,
-              maxLines: 2,
-            ),
-            SizedBox(height: width * 0.02),
-            const BookRating(),
-            SizedBox(height: width * 0.1),
-            const BooKDetailsBottom(),
-            SizedBox(height: width * 0.1),
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text("You Can Also Like ", style: Styles.text14),
-            ),
-            SizedBox(height: width * 0.04),
-
-            const SimilarBooksListView(),
+            const CustomBookDetailsAppBarSection(),
+            Expanded(flex: 1, child: SizedBox(height: height * 0.05)),
+            BookDetailsInfoSection(height: height, width: width),
+            Expanded(flex: 2, child: SizedBox(height: height * 0.05)),
+            const BooKDetailsBottomSection(),
+            Expanded(flex: 3, child: SizedBox(height: height * 0.055)),
+            const SimilarBooksListViewSection(),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class SimilarBooksListView extends StatelessWidget {
-  const SimilarBooksListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.17,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: BookImage(),
-          );
-        },
       ),
     );
   }
