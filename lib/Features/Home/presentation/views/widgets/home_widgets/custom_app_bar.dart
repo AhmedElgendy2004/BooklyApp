@@ -1,7 +1,6 @@
-import 'package:bookly_app/Core/Theme/constants.dart';
 import 'package:bookly_app/Core/utils/app_assets.dart';
 import 'package:bookly_app/Core/utils/app_router.dart';
-import 'package:bookly_app/Core/utils/tap_effect.dart';
+import 'package:bookly_app/Core/utils/widgets/custom_search_field.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 
@@ -10,39 +9,25 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double searchWidth = (MediaQuery.sizeOf(context).width - 100) * 0.8;
-
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(AppAssets.logo, height: 20),
-          searchIcon(searchWidth, context),
+          searchIcon(context),
         ],
       ),
     );
   }
 
-  Widget searchIcon(double searchWidth, BuildContext context) {
-    return TapEffect(
-      onClick: () {
+  Widget searchIcon(BuildContext context) {
+    return CustomSearchField(
+      width: MediaQuery.of(context).size.width * 0.5,
+      readOnly: true,
+      onTap: () {
         context.push(AppRouter.kSearchView);
       },
-      child: Container(
-        alignment: Alignment.bottomRight,
-        height: 40,
-        width: searchWidth,
-        decoration: BoxDecoration(
-          color: KPrimaryColor,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: KGrayColor, width: 1),
-        ),
-        child: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Icon(Icons.search, size: 28),
-        ),
-      ),
     );
   }
 }

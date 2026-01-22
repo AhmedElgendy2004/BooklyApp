@@ -1,8 +1,8 @@
 import 'package:bookly_app/Core/utils/widgets/custom_action_icons.dart';
 import 'package:flutter/material.dart';
 
-class CustomBookDetailsAppBarSection extends StatelessWidget {
-  const CustomBookDetailsAppBarSection({super.key});
+class CustomSearchAppBar extends StatelessWidget {
+  const CustomSearchAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
