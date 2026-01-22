@@ -17,9 +17,9 @@ class SearchViewBody extends StatelessWidget {
         child: Column(
           children: [
             CustomSearchAppBar(),
-            SizedBox(height: height * 0.05),
+            SizedBox(height: height * 0.04),
             CustomSearchTextField(),
-            SizedBox(height: height * 0.05),
+            SizedBox(height: height * 0.04),
           ],
         ),
       ),
