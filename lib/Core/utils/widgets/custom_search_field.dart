@@ -38,8 +38,7 @@ class CustomSearchField extends StatelessWidget {
             autofocus: autofocus,
             onTap: onTap,
             onChanged: onChanged,
-            cursorHeight:
-                height * 0.45, // الكيرسر هيصغر ويكبر طردياً مع الارتفاع
+            cursorHeight: height * 0.45,
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
               contentPadding: const EdgeInsets.symmetric(horizontal: 15),

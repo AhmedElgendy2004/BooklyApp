@@ -26,3 +26,7 @@ class SearchViewBody extends StatelessWidget {
     );
   }
 }
+
+// ListView.builder(
+//   // السطر السحري
+//   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
