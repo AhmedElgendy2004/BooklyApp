@@ -25,6 +25,7 @@ class CustomAppBar extends StatelessWidget {
     return CustomSearchField(
       width: MediaQuery.of(context).size.width * 0.5,
       readOnly: true,
+
       onTap: () {
         context.push(AppRouter.kSearchView);
       },

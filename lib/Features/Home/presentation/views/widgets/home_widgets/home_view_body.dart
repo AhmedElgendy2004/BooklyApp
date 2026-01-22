@@ -16,6 +16,7 @@ class HomeViewBody extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: width * 0.05),
         child: Column(
           children: [
+            const SizedBox(height: 10),
             const CustomAppBar(),
             Expanded(
               child: CustomScrollView(

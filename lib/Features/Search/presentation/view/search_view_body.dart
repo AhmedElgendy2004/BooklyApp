@@ -20,13 +20,12 @@ class SearchViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomSearchAppBar(),
-            SizedBox(height: height * 0.04),
-            CustomSearchTextField(),
-            SizedBox(height: height * 0.04),
+            SizedBox(height: height * 0.03),
+            const CustomSearchTextField(),
+            const SizedBox(height: 20),
             const Text("Search Result", style: Styles.text18gray),
-            SizedBox(height: height * 0.01),
-
-            Expanded(child: SearchResultListView()),
+            const SizedBox(height: 5),
+            const Expanded(child: SearchResultListView()),
           ],
         ),
       ),
@@ -34,17 +33,15 @@ class SearchViewBody extends StatelessWidget {
   }
 }
 
-// ListView.builder(
-//   // السطر السحري
-//   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+      keyboardDismissBehavior:
+          ScrollViewKeyboardDismissBehavior.onDrag, // close keyboard on scroll
+          itemCount: 10,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
