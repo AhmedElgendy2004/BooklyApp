@@ -1,5 +1,6 @@
 import 'package:bookly_app/Core/Theme/constants.dart';
 import 'package:bookly_app/Core/utils/app_assets.dart';
+import 'package:bookly_app/Core/utils/app_router.dart';
 import 'package:bookly_app/Core/utils/tap_effect.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class CustomAppBar extends StatelessWidget {
   Widget searchIcon(double searchWidth, BuildContext context) {
     return TapEffect(
       onClick: () {
-        context.push('/search');
+        context.push(AppRouter.kSearchView);
       },
       child: Container(
         alignment: Alignment.bottomRight,

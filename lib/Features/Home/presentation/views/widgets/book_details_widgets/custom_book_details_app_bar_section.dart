@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/utils/app_router.dart';
 import 'package:bookly_app/Core/utils/tap_effect.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -8,13 +9,13 @@ class CustomBookDetailsAppBarSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           TapEffect(
             onClick: () {
-              context.go('/home');
+              context.go(AppRouter.kHome);
             },
             child: const Icon(Icons.close, size: 32),
           ),
