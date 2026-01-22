@@ -26,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
                       children: [
                         const FeaturedSlider(),
                         const SizedBox(height: 30),
-                        Text("Best Sellers ", style: Styles.text18gray),
+                        const Text("Best Sellers ", style: Styles.text18gray),
                         const SizedBox(height: 20),
                       ],
                     ),

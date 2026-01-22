@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/Home/presentation/views/widgets/home_widgets/best_seller_list_view_item.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/home_widgets/book_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerSliverList extends StatelessWidget {
@@ -12,7 +12,7 @@ class BestSellerSliverList extends StatelessWidget {
         (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
-            child: BestSellerListViewItem(),
+            child: BookListViewItem(),
           );
         },
         childCount: 10, // عدد العناصر

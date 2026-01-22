@@ -1,5 +1,7 @@
+import 'package:bookly_app/Core/utils/style.dart';
 import 'package:bookly_app/Core/utils/widgets/custom_action_icons.dart';
 import 'package:bookly_app/Core/utils/widgets/custom_search_field.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/home_widgets/book_list_view_item.dart';
 import 'package:bookly_app/Features/Search/presentation/view/widgets/custom_search_app_bar.dart';
 import 'package:bookly_app/Features/Search/presentation/view/widgets/custom_search_text_field.dart';
 import 'package:flutter/material.dart';
@@ -15,11 +17,16 @@ class SearchViewBody extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomSearchAppBar(),
             SizedBox(height: height * 0.04),
             CustomSearchTextField(),
             SizedBox(height: height * 0.04),
+            const Text("Search Result", style: Styles.text18gray),
+            SizedBox(height: height * 0.01),
+
+            Expanded(child: SearchResultListView()),
           ],
         ),
       ),
@@ -30,3 +37,20 @@ class SearchViewBody extends StatelessWidget {
 // ListView.builder(
 //   // السطر السحري
 //   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+
+class SearchResultListView extends StatelessWidget {
+  const SearchResultListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: BookListViewItem(),
+        );
+      },
+    );
+  }
+}
